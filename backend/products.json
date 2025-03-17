@@ -1,6 +1,10 @@
 {
   "products": [
-    { "name": "Caiet A5", "price": 5.0, "image": "images/caiet.jpg" },
+    {
+      "name": "Caiet A5",
+      "price": 5.0,
+      "image": "/backend/images/logoDWS.png"
+    },
     { "name": "Pix Albastru", "price": 2.5, "image": "images/pix.jpg" },
     {
       "name": "Creioane Colorate",
