@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
   margin: 0;
   padding: 0;
@@ -50,6 +51,8 @@ header {
   cursor: pointer;
 }
 
+=======
+>>>>>>> 28ae6373c23822abb13fae528df2897c163904c2
 aside {
   width: 220px;
   padding: 20px;
@@ -86,6 +89,50 @@ aside li:hover {
   font-weight: bold;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ----- HEADER ----- */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 15px 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.user-icons {
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ----- BANNER ----- */
 .banner {
   padding: 50px;
   background: linear-gradient(to right, #ff9966, #ff5e62);
@@ -110,12 +157,7 @@ aside li:hover {
   background: #ddd;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
+/* ----- PRODUSE ----- */
 h2 {
   text-align: center;
   margin-bottom: 20px;
@@ -129,43 +171,43 @@ h2 {
   padding: 20px;
 }
 
-.product-card {
+/* ----- CARD PRODUS ----- */
+.product {
   background: white;
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   text-align: center;
   transition: transform 0.2s ease-in-out;
-}
-
-.product-card:hover {
-  transform: scale(1.05);
-}
-
-.product-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-bottom: 1px solid #ddd;
-}
-
-.product-card .product-info {
   padding: 15px;
 }
 
-.product-card h3 {
+.product:hover {
+  transform: scale(1.05);
+}
+
+/* IMAGINI PRODUSE */
+.product img {
+  width: 100%;
+  height: 180px; /* Dimensiune fixă pentru uniformitate */
+  object-fit: cover; /* Taie excesul și menține proporțiile */
+  border-bottom: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.product h3 {
   font-size: 18px;
   margin: 10px 0;
   color: #333;
 }
 
-.product-card p {
+.product p {
   font-size: 16px;
   color: #666;
   margin-bottom: 10px;
 }
 
-.product-card button {
+.product button {
   background: #ff4081;
   color: white;
   border: none;
@@ -176,10 +218,11 @@ h2 {
   transition: background 0.3s;
 }
 
-.product-card button:hover {
+.product button:hover {
   background: #e6006e;
 }
 
+/* ----- FOOTER ----- */
 footer {
   text-align: center;
   padding: 20px;
@@ -187,6 +230,8 @@ footer {
   color: white;
   margin-top: 20px;
 }
+
+/* ----- RESPONSIVITATE ----- */
 @media (max-width: 1024px) {
   .container {
     margin-left: 0;

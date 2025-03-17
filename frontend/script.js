@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", function () {
     const categoryItems = document.querySelectorAll("aside li");
     const productList = document.getElementById("product-list");
@@ -53,3 +54,25 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+=======
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("products.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const productList = document.getElementById("product-list")
+
+      data.products.forEach((product) => {
+        const productItem = document.createElement("div")
+        productItem.classList.add("product")
+        productItem.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <p>Preț: ${product.price.toFixed(2)} RON</p>
+                    <button>Adaugă în coș</button>
+                `
+        productList.appendChild(productItem)
+      })
+    })
+    .catch((error) => console.error("Eroare la încărcarea produselor:", error))
+})
+>>>>>>> 28ae6373c23822abb13fae528df2897c163904c2

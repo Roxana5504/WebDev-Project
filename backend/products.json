@@ -1,5 +1,6 @@
 {
   "products": [
+<<<<<<< HEAD
     { "name": "Caiet A5", "price": 5.00, "image": "/backend/images/caiet.jpg" },
     { "name": "Pix Albastru", "price": 2.50, "image": "/backend/images/pix.jpg" },
     { "name": "Creioane Colorate", "price": 15.00, "image": "/backend/images/creioane.jpg" },
@@ -12,5 +13,49 @@
     { "name": "Set Pensule", "price": 25.00, "image": "/backend/images/pensule.jpg" },
      { "name": "Set Markere", "price": 40.00, "image": "/backend/images/markere.jpg" },
       { "name": "Ghiozdan Clasic", "price": 90.00, "image": "/backend/images/gh.jpg" }
+=======
+    { "name": "Caiet A5", "price": 5.0, "image": "/backend/images/caiet.jpg" },
+    {
+      "name": "Pix Albastru",
+      "price": 2.5,
+      "image": "/backend/images/pix.jpg"
+    },
+    {
+      "name": "Creioane Colorate",
+      "price": 15.0,
+      "image": "/backend/images/creioane.jpg"
+    },
+    {
+      "name": "Ghiozdan Ergonomic",
+      "price": 120.0,
+      "image": "/backend/images/ghiozdan.jpg"
+    },
+    {
+      "name": "Penar cu Fermuar",
+      "price": 30.0,
+      "image": "/backend/images/penar.jpg"
+    },
+    {
+      "name": "Ascuțitoare",
+      "price": 3.0,
+      "image": "/backend/images/ascutitoare.jpg"
+    },
+    { "name": "Radieră", "price": 2.0, "image": "/backend/images/radiera.jpg" },
+    {
+      "name": "Riglă 30cm",
+      "price": 7.0,
+      "image": "/backend/images/rigla.jpg"
+    },
+    {
+      "name": "Bloc de desen",
+      "price": 18.0,
+      "image": "/backend/images/blocdesen.jpg"
+    },
+    {
+      "name": "Set Pensule",
+      "price": 25.0,
+      "image": "/backend/images/pensule.jpg"
+    }
+>>>>>>> 28ae6373c23822abb13fae528df2897c163904c2
   ]
 }
