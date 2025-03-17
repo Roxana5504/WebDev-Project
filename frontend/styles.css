@@ -14,7 +14,7 @@ header {
  align-items: center;
  justify-content: space-between;
  background: white;
- padding: 15px 30px;
+ padding: 0px 20px;
  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
  position: fixed;
  width: 100%;
@@ -29,10 +29,11 @@ header {
  font-size: 24px;
  font-weight: bold;
  color: #333;
+ padding: 0px;
 }
 
 .logo img {
- height: 40px;
+ height: 60px;
  margin-right: 10px;
  cursor: pointer;
 }
@@ -50,7 +51,6 @@ header {
  cursor: pointer;
 }
 
-/* ----------- SIDEBAR ----------- */
 aside {
  width: 220px;
  padding: 20px;
