@@ -1,57 +1,67 @@
 <!DOCTYPE html>
 <html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Căutare Produse</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Căutare Produse</title>
-  <link rel="stylesheet" href="/styles.css" />
-</head>
-
-<body>
-  <div class="container">
-    <header>
+  <body>
+    <header class="container-header">
       <div class="logo">
         <img src="/backend/images/logoDWS.png" alt="EduStore" />
       </div>
+
       <div class="search-bar">
-        <input type="text" placeholder="Caută produse..." />
-        <button>🔍</button>
+        <input type="text" placeholder="Search" />
+        <button class="search-btn">🔍</button>
       </div>
-      <div class="user-icons">
-        <span>❤️</span>
-        <span>🛒</span>
-        <img src="" alt="Profil" />
+
+      <div class="header-icons">
+        <div class="header-icon">
+          <span class="badge">4</span>
+          <img src="/icons/message-icon.png" alt="Mesaje" />
+        </div>
+        <div class="header-icon">
+          <img src="/icons/heart-icon.png" alt="Favorite" />
+        </div>
+        <div class="header-icon profile">
+          <img src="/icons/profile-icon.png" alt="Profil" />
+        </div>
       </div>
     </header>
 
-    <section class="banner">
-      <h1>Reduceri Mari!</h1>
-      <p>Până la 20% reducere la ghiozdane ergonomice!</p>
-      <button>Cumpără acum</button>
-    </section>
-    <aside>
-      <h2>Categorii</h2>
-      <ul>
-        <li>Rechizite</li>
-        <li>Ghiozdane</li>
-        <li>Instrumente de scris</li>
-        <li>Arta & Creativitate</li>
-        <li>Accesorii</li>
-      </ul>
-    </aside>
+    <div class="main-content">
+      <aside class="sidebar">
+        <h2>Categorii</h2>
+        <ul>
+          <li>Rechizite</li>
+          <li>Ghiozdane</li>
+          <li>Instrumente de scris</li>
+          <li>Arta & Creativitate</li>
+          <li>Accesorii</li>
+        </ul>
+      </aside>
 
-    <section class="products">
-      <h2>Produse Noastre</h2>
-      <div id="product-list" class="product-list"></div>
-    </section>
+      <div class="container">
+        <section class="banner">
+          <h1>Reduceri Mari!</h1>
+          <p>Până la 20% reducere la ghiozdane ergonomice!</p>
+          <button>Cumpără acum</button>
+        </section>
 
-    <footer>
-      <p>&copy; 2024 EduStore. Toate drepturile rezervate.</p>
-      <p>Contact: suport@edustore.com</p>
-    </footer>
-  </div>
-  <script src="script.js"></script>
-</body>
+        <section class="products">
+          <h2>Produse Noastre</h2>
+          <div id="product-list" class="product-list"></div>
+        </section>
 
+        <footer>
+          <p>&copy; 2024 EduStore. Toate drepturile rezervate.</p>
+          <p>Contact: suport@edustore.com</p>
+        </footer>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
