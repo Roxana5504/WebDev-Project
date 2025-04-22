@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Căutare Produse</title>
     <link rel="stylesheet" href="/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
@@ -14,20 +18,25 @@
       </div>
 
       <div class="search-bar">
-        <input type="text" placeholder="Search" />
-        <button class="search-btn">🔍</button>
+        <button class="sidebar-toggle" id="sidebar-toggle">
+          <i class="bx bx-menu"></i>
+        </button>
+        <input type="text" id="search-input" placeholder="Caută produse..." />
+        <button class="search-btn" id="search-btn">
+          <i class="bx bx-search"></i>
+        </button>
       </div>
 
       <div class="header-icons">
         <div class="header-icon">
-          <span class="badge">4</span>
-          <img src="/icons/message-icon.png" alt="Mesaje" />
+          <span class="cart-items">4</span>
+          <i class="bx bx-cart"></i>
         </div>
         <div class="header-icon">
-          <img src="/icons/heart-icon.png" alt="Favorite" />
+          <i class="bx bx-heart"></i>
         </div>
         <div class="header-icon profile">
-          <img src="/icons/profile-icon.png" alt="Profil" />
+          <i class="bx bx-user"></i>
         </div>
       </div>
     </header>
@@ -41,27 +50,29 @@
           <li>Instrumente de scris</li>
           <li>Arta & Creativitate</li>
           <li>Accesorii</li>
+          <li>Cărți</li>
         </ul>
       </aside>
 
       <div class="container">
-        <section class="banner">
-          <h1>Reduceri Mari!</h1>
-          <p>Până la 20% reducere la ghiozdane ergonomice!</p>
-          <button>Cumpără acum</button>
-        </section>
+        <!-- <section class="banner">
+          <div class="banner-left"></div>
+          <div class="banner-right">
+            <div class="box discount"></div>
+            <div class="box camera"></div>
+          </div>
+        </section> -->
 
         <section class="products">
-          <h2>Produse Noastre</h2>
+          <h2>Explorează produse noastre</h2>
           <div id="product-list" class="product-list"></div>
         </section>
-
-        <footer>
-          <p>&copy; 2024 EduStore. Toate drepturile rezervate.</p>
-          <p>Contact: suport@edustore.com</p>
-        </footer>
       </div>
     </div>
+    <footer>
+      <p>&copy; 2025 EduStore. Toate drepturile rezervate.</p>
+      <p>Contact: suport@edustore.com</p>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>

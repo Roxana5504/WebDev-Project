@@ -1,55 +1,191 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const categoryItems = document.querySelectorAll("aside li");
-    const productList = document.getElementById("product-list");
+  const categoryItems = document.querySelectorAll("aside li")
+  const productList = document.getElementById("product-list")
 
-    // Array de produse (simulat, poate veni dintr-o bază de date sau API)
-    const products = [
-        { name: "Caiet A5", price: "5.00 RON", image: "caiet.jpg", category: "rechizite" },
-        { name: "Pix Albastru", price: "2.50 RON", image: "pix.jpg", category: "instrumente-de-scris" },
-        { name: "Creioane Colorate", price: "15.00 RON", image: "creioane.jpg", category: "arta-creativitate" },
-        { name: "Ghiozdan Ergonomic", price: "120.00 RON", image: "ghiozdan.jpg", category: "ghiozdane" },
-        { name: "Radieră", price: "3.00 RON", image: "radiera.jpg", category: "accesorii" },
-        { name: "Ascuțitoare Metalică", price: "4.00 RON", image: "ascutitoare.jpg", category: "accesorii" },
-        { name: "Riglă 30cm", price: "6.00 RON", image: "rigla.jpg", category: "rechizite" },
-        { name: "Penar Simplu", price: "25.00 RON", image: "penar.jpg", category: "rechizite" },
-        { name: "Set Markere", price: "40.00 RON", image: "markere.jpg", category: "arta-creativitate" },
-        { name: "Ghiozdan Clasic", price: "90.00 RON", image: "ghiozdan-clasic.jpg", category: "ghiozdane" }
-    ];
+  // Array de produse (simulat, poate veni dintr-o bază de date sau API)
+  const products = [
+    {
+      name: "Caiet A5",
+      price: "5.00 RON",
+      image: "caiet.jpg",
+      category: "rechizite",
+    },
+    {
+      name: "Pix Albastru",
+      price: "2.50 RON",
+      image: "pix.jpg",
+      category: "instrumente-de-scris",
+    },
+    {
+      name: "Creioane Colorate",
+      price: "15.00 RON",
+      image: "creioane.jpg",
+      category: "arta-creativitate",
+    },
+    {
+      name: "Ghiozdan Ergonomic",
+      price: "120.00 RON",
+      image: "ghiozdan.jpg",
+      category: "ghiozdane",
+    },
+    {
+      name: "Radieră",
+      price: "3.00 RON",
+      image: "radiera.jpg",
+      category: "accesorii",
+    },
+    {
+      name: "Ascuțitoare Metalică",
+      price: "4.00 RON",
+      image: "ascutitoare.jpg",
+      category: "accesorii",
+    },
+    {
+      name: "Riglă 30cm",
+      price: "6.00 RON",
+      image: "rigla.jpg",
+      category: "rechizite",
+    },
+    {
+      name: "Penar Simplu",
+      price: "25.00 RON",
+      image: "penar.jpg",
+      category: "rechizite",
+    },
+    {
+      name: "Set Markere",
+      price: "40.00 RON",
+      image: "markere.jpg",
+      category: "arta-creativitate",
+    },
+    {
+      name: "Ghiozdan Clasic",
+      price: "90.00 RON",
+      image: "gh.jpg",
+      category: "ghiozdane",
+    },
+  ]
 
-    // Generăm HTML pentru fiecare produs
-    function renderProducts() {
-        productList.innerHTML = ""; // Ștergem produsele existente
-        products.forEach(product => {
-            const productCard = document.createElement("div");
-            productCard.classList.add("product-card");
-            productCard.setAttribute("data-category", product.category);
-            productCard.innerHTML = `
+  // Generăm HTML pentru fiecare produs
+  function renderProducts() {
+    productList.innerHTML = "" // Ștergem produsele existente
+    products.forEach((product) => {
+      const productCard = document.createElement("div")
+      productCard.classList.add("product-card")
+      productCard.setAttribute("data-category", product.category)
+      productCard.innerHTML = `
                 <img src="/backend/images/${product.image}" alt="${product.name}" style="width: 200px; height: 200px; object-fit: cover;">
                 <div class="product-info">
                     <h3>${product.name}</h3>
                     <p>${product.price}</p>
                     <button>Adaugă în coș</button>
                 </div>
-            `;
-            productList.appendChild(productCard);
-        });
-    }
+            `
+      productList.appendChild(productCard)
+    })
+  }
 
-    renderProducts(); // Generăm produsele la încărcarea paginii
+  renderProducts() // Generăm produsele la încărcarea paginii
 
-    // Filtrare produse după categorie
-    categoryItems.forEach(item => {
-        item.addEventListener("click", function () {
-            const category = this.textContent.trim().toLowerCase().replace(/\s+/g, "-");
-            const productCards = document.querySelectorAll(".product-card");
+  // Filtrare produse după categorie
+  categoryItems.forEach((item) => {
+    item.addEventListener("click", function () {
+      const category = this.textContent
+        .trim()
+        .toLowerCase()
+        .replace(/\s+/g, "-")
+      const productCards = document.querySelectorAll(".product-card")
 
-            productCards.forEach(product => {
-                if (product.getAttribute("data-category") === category || category === "toate") {
-                    product.style.display = "flex"; 
-                } else {
-                    product.style.display = "none";
-                }
-            });
-        });
-    });
-});
+      productCards.forEach((product) => {
+        if (
+          product.getAttribute("data-category") === category ||
+          category === "toate"
+        ) {
+          product.style.display = "flex"
+        } else {
+          product.style.display = "none"
+        }
+      })
+    })
+  })
+})
+
+//Roxana
+document.getElementById("search-btn").addEventListener("click", () => {
+  const query = document.getElementById("search-input").value.trim()
+
+  fetch(`/products/${query}`)
+    .then((res) => {
+      if (!res.ok) throw new Error("Server error: " + res.status)
+      return res.json()
+    })
+    .then((data) => {
+      if (data.length > 0) {
+        showModalWithProducts(data)
+      } else {
+        showNoProductFoundModal(query)
+      }
+    })
+    .catch((err) => {
+      console.error("Eroare:", err)
+    })
+})
+
+function showModalWithProducts(products) {
+  let modalHTML = `
+      <div id="product-modal" class="modal-overlay">
+        <div class="modal-content">
+          <span class="close-btn" onclick="closeModal()">&times;</span>
+          <h2>Rezultate Căutare</h2>
+          <div class="modal-products">
+    `
+
+  products.forEach((product) => {
+    modalHTML += `
+        <div class="modal-product-card">
+          <img src="${product.image}" alt="${product.name}" />
+          <h3>${product.name}</h3>
+          <p>Preț: ${product.price} lei</p>
+          <p>Cantitate: ${product.quantity ?? "Nespecificat"}</p>
+        </div>
+      `
+  })
+
+  modalHTML += `
+          </div>
+        </div>
+      </div>
+    `
+
+  document.body.insertAdjacentHTML("beforeend", modalHTML)
+}
+
+function showNoProductFoundModal(query) {
+  const modalHTML = `
+      <div id="product-modal" class="modal-overlay">
+        <div class="modal-content">
+          <span class="close-btn" onclick="closeModal()">&times;</span>
+          <h2>Produs negăsit</h2>
+          <p>Nu am găsit produsul <strong>"${query}"</strong>.</p>
+          <p>Dorești să îl adaugi în magazin?</p>
+          <div class="modal-buttons">
+          <button onclick="openAddProductForm('${query}')">Adaugă produs</button>
+          <button onclick="closeModal()">Încearcă din nou</button></div>
+        </div>
+      </div>
+    `
+  document.body.insertAdjacentHTML("beforeend", modalHTML)
+}
+
+function closeModal() {
+  const modal = document.getElementById("product-modal")
+  if (modal) modal.remove()
+}
+
+const sidebarToggle = document.getElementById("sidebar-toggle")
+const sidebar = document.querySelector(".sidebar")
+
+sidebarToggle.addEventListener("click", () => {
+  sidebar.classList.toggle("open") // Deschide sau închide sidebar-ul
+})
+//Sfarsit cod Roxana
