@@ -118,8 +118,6 @@ document.getElementById("buy-now-btn").addEventListener("click", () => {
     .then((data) => {
       if (data.length > 0) {
         showModalWithProducts(data)
-      } else {
-        showNoProductFoundModal(query)
       }
     })
     .catch((err) => {

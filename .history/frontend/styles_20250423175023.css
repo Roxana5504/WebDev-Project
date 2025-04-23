@@ -424,22 +424,15 @@ footer {
     max-width: 300px;
   }
   .sidebar {
-    position: fixed;
-    top: 0px;
+    position: fixed !important;
+    top: 174px !important;
     z-index: 99;
     transform: translateX(-100%);
     display: none;
     border: none;
   }
 
-  .sidebar div {
-    position: fixed;
-    top: 170px;
-    background-color: white;
-    z-index: 99;
-  }
-
-  .sidebar-toggle {
+  .sideb .sidebar-toggle {
     display: block;
   }
 

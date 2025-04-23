@@ -202,7 +202,7 @@ body {
 
 .sidebar div {
   position: fixed;
-  top: 114px;
+  top: 0px;
   background-color: white;
   z-index: 99;
 }
@@ -425,18 +425,11 @@ footer {
   }
   .sidebar {
     position: fixed;
-    top: 0px;
+    top: 170px;
     z-index: 99;
     transform: translateX(-100%);
     display: none;
     border: none;
-  }
-
-  .sidebar div {
-    position: fixed;
-    top: 170px;
-    background-color: white;
-    z-index: 99;
   }
 
   .sidebar-toggle {

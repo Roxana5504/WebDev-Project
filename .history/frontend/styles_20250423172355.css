@@ -1,11 +1,9 @@
 /*CSS Roxana*/
 html,
 body {
-  height: auto; /* nu mai forțăm 100% */
-  min-height: 100%;
+  height: 100%;
   margin: 0;
-  padding-top: 60px;
-  overflow-x: hidden;
+  padding: 0;
 }
 
 .modal-overlay {
@@ -85,7 +83,7 @@ body {
 }
 
 .container-header {
-  position: fixed;
+  position: sticky;
   top: 0px;
   background-color: white;
   z-index: 98;
@@ -175,8 +173,9 @@ body {
 
 .main-content {
   display: flex;
-  width: 100%;
+  flex: 1;
   box-sizing: border-box;
+  justify-content: left;
 }
 
 .container {
@@ -201,8 +200,8 @@ body {
 }
 
 .sidebar div {
-  position: fixed;
-  top: 114px;
+  position: sticky;
+  top: 0px;
   background-color: white;
   z-index: 99;
 }
@@ -258,6 +257,7 @@ body {
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   flex: 1;
 }
 
@@ -267,8 +267,6 @@ body {
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
-  justify-content: center;
-  text-align: center;
 }
 
 .banner-left-content img {
@@ -306,7 +304,6 @@ body {
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
-  align-self: center;
 }
 
 .banner-right {
@@ -331,21 +328,13 @@ body {
 }
 
 .banner-right-up {
-  background: url("/backend/images/bkgdsw.jpg");
-  background-size: cover;
+  background: url();
   color: rgb(22, 50, 82);
-  flex: 1;
 }
 
 .banner-right-down {
-  background: #ffebf5;
-  background: linear-gradient(
-    124deg,
-    rgba(255, 235, 245, 1) 50%,
-    rgba(255, 255, 255, 1) 100%
-  );
+  background: #eef4fc;
   color: rgb(22, 50, 82);
-  flex: 1;
 }
 
 footer {
@@ -424,19 +413,10 @@ footer {
     max-width: 300px;
   }
   .sidebar {
-    position: fixed;
-    top: 0px;
+    width: 30%;
     z-index: 99;
     transform: translateX(-100%);
     display: none;
-    border: none;
-  }
-
-  .sidebar div {
-    position: fixed;
-    top: 170px;
-    background-color: white;
-    z-index: 99;
   }
 
   .sidebar-toggle {

@@ -193,6 +193,7 @@ body {
 
 .sidebar {
   position: relative;
+  top: 20px;
   height: auto;
   width: 200px;
   padding-right: 0px;
@@ -201,8 +202,8 @@ body {
 }
 
 .sidebar div {
-  position: fixed;
-  top: 114px;
+  position: sticky;
+  top: 0px;
   background-color: white;
   z-index: 99;
 }
@@ -425,18 +426,10 @@ footer {
   }
   .sidebar {
     position: fixed;
-    top: 0px;
     z-index: 99;
     transform: translateX(-100%);
     display: none;
     border: none;
-  }
-
-  .sidebar div {
-    position: fixed;
-    top: 170px;
-    background-color: white;
-    z-index: 99;
   }
 
   .sidebar-toggle {

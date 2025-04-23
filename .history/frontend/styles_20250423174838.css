@@ -424,8 +424,7 @@ footer {
     max-width: 300px;
   }
   .sidebar {
-    position: fixed;
-    top: 0px;
+    top: 174px !important;
     z-index: 99;
     transform: translateX(-100%);
     display: none;
@@ -433,10 +432,6 @@ footer {
   }
 
   .sidebar div {
-    position: fixed;
-    top: 170px;
-    background-color: white;
-    z-index: 99;
   }
 
   .sidebar-toggle {

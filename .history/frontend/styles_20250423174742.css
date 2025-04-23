@@ -424,8 +424,6 @@ footer {
     max-width: 300px;
   }
   .sidebar {
-    position: fixed;
-    top: 0px;
     z-index: 99;
     transform: translateX(-100%);
     display: none;

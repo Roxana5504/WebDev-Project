@@ -1,11 +1,9 @@
 /*CSS Roxana*/
 html,
 body {
-  height: auto; /* nu mai forțăm 100% */
-  min-height: 100%;
+  height: 100%;
   margin: 0;
-  padding-top: 60px;
-  overflow-x: hidden;
+  padding: 0;
 }
 
 .modal-overlay {
@@ -85,7 +83,7 @@ body {
 }
 
 .container-header {
-  position: fixed;
+  position: sticky;
   top: 0px;
   background-color: white;
   z-index: 98;
@@ -175,8 +173,9 @@ body {
 
 .main-content {
   display: flex;
-  width: 100%;
+  flex: 1;
   box-sizing: border-box;
+  justify-content: left;
 }
 
 .container {
@@ -192,73 +191,75 @@ body {
 }
 
 .sidebar {
-  position: relative;
-  height: auto;
-  width: 200px;
-  padding-right: 0px;
-  margin-right: 20px;
-  border-right: 1px solid rgb(203, 227, 255);
+  width: 240px;
+  border-right: 1px solid #e2e8f0; /* subtle grey */
+  padding: 0;
+  background-color: #ffffff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .sidebar div {
-  position: fixed;
-  top: 114px;
-  background-color: white;
+  position: sticky;
+  top: 0;
+  padding: 24px 20px;
+  background-color: #ffffff;
   z-index: 99;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
 .sidebar h2 {
-  padding: 10px 0 10px 20px;
-  font-size: 30px;
-  font-weight: bold;
-  margin-top: 0px;
-  color: rgb(22, 50, 82);
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 10px;
 }
 
 .sidebar ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  margin-left: 20px;
 }
 
 .sidebar ul li {
-  padding: 10px 0;
-  font-size: 20px;
-  color: #333;
+  font-size: 18px;
+  color: #4a5568;
+  padding: 12px 0;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  padding-left: 10px;
 }
 
 .sidebar ul li:hover {
+  background-color: #f1f5f9;
   color: #0d4e5a;
+  padding-left: 16px;
 }
 
 .sidebar-toggle {
-  background: none;
-  border: none;
-  font-size: 25px;
-  cursor: pointer;
-  display: none;
+  display: none; /* reserved for mobile later if needed */
 }
 
 .banner {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  margin: 30px 0;
   width: 100%;
-  box-sizing: border-box;
 }
 
 .banner-left {
   box-sizing: border-box;
   background: linear-gradient(to bottom right, #fefeff, #e8f0ff);
-  border-radius: 16px;
-  padding: 10px;
+  border-radius: 20px;
+  padding: 20px;
   position: relative;
   display: flex;
   align-items: center;
-  flex: 1;
+  justify-content: space-between;
+  flex: 1 1 50%;
 }
 
 .banner-left-content {
@@ -267,8 +268,7 @@ body {
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
-  justify-content: center;
-  text-align: center;
+  max-width: 500px;
 }
 
 .banner-left-content img {
@@ -288,29 +288,32 @@ body {
 
 .banner-text h2 {
   font-size: 1.8rem;
-  color: rgb(22, 50, 82);
+  color: #333;
   margin: 0;
 }
 
 .banner-text p {
   font-size: 1rem;
-  color: rgb(22, 50, 82);
+  color: #555;
 }
 
 .buy-now-btn {
-  background-color: rgb(22, 50, 82);
-  max-width: 200px;
+  background-color: #007bff;
   color: white;
   border: none;
   padding: 10px 16px;
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
-  align-self: center;
+  transition: background 0.3s ease;
+}
+
+.buy-now-btn:hover {
+  background-color: #0056b3;
 }
 
 .banner-right {
-  flex: 1;
+  flex: 1 1 45%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -331,21 +334,13 @@ body {
 }
 
 .banner-right-up {
-  background: url("/backend/images/bkgdsw.jpg");
-  background-size: cover;
-  color: rgb(22, 50, 82);
-  flex: 1;
+  background: linear-gradient(to right, #fff2f2, #ffe5e5);
+  color: #333;
 }
 
 .banner-right-down {
-  background: #ffebf5;
-  background: linear-gradient(
-    124deg,
-    rgba(255, 235, 245, 1) 50%,
-    rgba(255, 255, 255, 1) 100%
-  );
-  color: rgb(22, 50, 82);
-  flex: 1;
+  background: #eef4fc;
+  color: #333;
 }
 
 footer {
@@ -424,19 +419,10 @@ footer {
     max-width: 300px;
   }
   .sidebar {
-    position: fixed;
-    top: 0px;
+    width: 30%;
     z-index: 99;
     transform: translateX(-100%);
     display: none;
-    border: none;
-  }
-
-  .sidebar div {
-    position: fixed;
-    top: 170px;
-    background-color: white;
-    z-index: 99;
   }
 
   .sidebar-toggle {

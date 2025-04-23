@@ -118,8 +118,6 @@ document.getElementById("buy-now-btn").addEventListener("click", () => {
     .then((data) => {
       if (data.length > 0) {
         showModalWithProducts(data)
-      } else {
-        showNoProductFoundModal(query)
       }
     })
     .catch((err) => {
@@ -178,10 +176,4 @@ function closeModal() {
   if (modal) modal.remove()
 }
 
-const sidebarToggle = document.getElementById("sidebar-toggle")
-const sidebar = document.querySelector(".sidebar")
-
-sidebarToggle.addEventListener("click", () => {
-  sidebar.classList.toggle("open")
-})
 //Sfarsit cod Roxana

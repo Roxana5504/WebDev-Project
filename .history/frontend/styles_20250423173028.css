@@ -1,11 +1,9 @@
 /*CSS Roxana*/
 html,
 body {
-  height: auto; /* nu mai forțăm 100% */
-  min-height: 100%;
+  height: 100%;
   margin: 0;
-  padding-top: 60px;
-  overflow-x: hidden;
+  padding: 0;
 }
 
 .modal-overlay {
@@ -85,7 +83,7 @@ body {
 }
 
 .container-header {
-  position: fixed;
+  position: sticky;
   top: 0px;
   background-color: white;
   z-index: 98;
@@ -175,8 +173,9 @@ body {
 
 .main-content {
   display: flex;
-  width: 100%;
+  flex: 1;
   box-sizing: border-box;
+  justify-content: left;
 }
 
 .container {
@@ -201,8 +200,8 @@ body {
 }
 
 .sidebar div {
-  position: fixed;
-  top: 114px;
+  position: sticky;
+  top: 0px;
   background-color: white;
   z-index: 99;
 }
@@ -424,19 +423,11 @@ footer {
     max-width: 300px;
   }
   .sidebar {
-    position: fixed;
-    top: 0px;
+    position: absolute;
+    width: 30%;
     z-index: 99;
     transform: translateX(-100%);
     display: none;
-    border: none;
-  }
-
-  .sidebar div {
-    position: fixed;
-    top: 170px;
-    background-color: white;
-    z-index: 99;
   }
 
   .sidebar-toggle {

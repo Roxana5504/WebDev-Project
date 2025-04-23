@@ -4,7 +4,7 @@ body {
   height: auto; /* nu mai forțăm 100% */
   min-height: 100%;
   margin: 0;
-  padding-top: 60px;
+  padding: 0;
   overflow-x: hidden;
 }
 
@@ -85,7 +85,7 @@ body {
 }
 
 .container-header {
-  position: fixed;
+  position: relative;
   top: 0px;
   background-color: white;
   z-index: 98;
@@ -201,8 +201,8 @@ body {
 }
 
 .sidebar div {
-  position: fixed;
-  top: 114px;
+  position: sticky;
+  top: 0px;
   background-color: white;
   z-index: 99;
 }
@@ -425,18 +425,10 @@ footer {
   }
   .sidebar {
     position: fixed;
-    top: 0px;
     z-index: 99;
     transform: translateX(-100%);
     display: none;
     border: none;
-  }
-
-  .sidebar div {
-    position: fixed;
-    top: 170px;
-    background-color: white;
-    z-index: 99;
   }
 
   .sidebar-toggle {
