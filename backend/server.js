@@ -47,3 +47,43 @@ app.listen(PORT, () =>
 )
 
 console.log("Server restarted!")
+
+
+
+// ADAUGA PRODUS-Elena
+app.post("/products", (req, res) => {
+  const newProduct = req.body
+
+  const filePath = path.join(__dirname, "products.json")
+  fs.readFile(filePath, "utf8", (err, data) => {
+    if (err) {
+      console.error("Eroare la citirea fișierului JSON:", err)
+      return res.status(500).json({ message: "Eroare server" })
+    }
+
+    try {
+      const jsonData = JSON.parse(data)
+      const exists = jsonData.products.some(
+        (p) => p.name.toLowerCase() === newProduct.name.toLowerCase()
+      )
+
+      if (exists) {
+        return res.status(400).json({ message: "Produsul există deja!" })
+      }
+
+      jsonData.products.push(newProduct)
+
+      fs.writeFile(filePath, JSON.stringify(jsonData, null, 2), (writeErr) => {
+        if (writeErr) {
+          console.error("Eroare la salvare:", writeErr)
+          return res.status(500).json({ message: "Eroare la salvare" })
+        }
+
+        res.status(200).json({ message: "Produs adăugat cu succes" })
+      })
+    } catch (parseErr) {
+      console.error("Eroare parsare JSON:", parseErr)
+      res.status(500).json({ message: "Eroare la parsare JSON" })
+    }
+  })
+})

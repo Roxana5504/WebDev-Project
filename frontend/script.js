@@ -173,10 +173,13 @@ function showNoProductFoundModal(query) {
   document.body.insertAdjacentHTML("beforeend", modalHTML)
 }
 
+//MODIFICAT ELENA PT ADAUGAPRODUS: fiind două tipuri de modale:#product-modal pentru rezultatul căutării #add-product-modal pentru formularul de adăugare
+//folosim querySelector(".modal-overlay") pt a ne asigură că oricare dintre ele se închide corect.
 function closeModal() {
-  const modal = document.getElementById("product-modal")
+  const modal = document.querySelector(".modal-overlay")
   if (modal) modal.remove()
 }
+
 
 const sidebarToggle = document.getElementById("sidebar-toggle")
 const sidebar = document.querySelector(".sidebar")
@@ -185,3 +188,74 @@ sidebarToggle.addEventListener("click", () => {
   sidebar.classList.toggle("open")
 })
 //Sfarsit cod Roxana
+
+
+
+
+//ELENA-AGAUGA PRODUS-
+function openAddProductForm(query) {
+  closeModal()
+
+  const formHTML = `
+    <div id="add-product-modal" class="modal-overlay">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2>Adaugă produs nou</h2>
+        <form id="add-product-form">
+          <label>Nume produs:</label>
+          <input type="text" name="name" value="${query}" required />
+
+          <label>Preț:</label>
+          <input type="number" name="price" step="0.01" required />
+
+          <label>Cantitate:</label>
+          <input type="number" name="quantity" required />
+
+          <label>URL imagine:</label>
+          <input type="text" name="image" required />
+
+          <button type="submit">Salvează produs</button>
+        </form>
+      </div>
+    </div>
+  `
+
+  document.body.insertAdjacentHTML("beforeend", formHTML)
+
+  document
+    .getElementById("add-product-form")
+    .addEventListener("submit", function (e) {
+      e.preventDefault()
+
+      const formData = new FormData(this)
+      const product = {
+        name: formData.get("name"),
+        price: parseFloat(formData.get("price")),
+        quantity: parseInt(formData.get("quantity")),
+        image: formData.get("image")
+      }
+
+      fetch("/products", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(product)
+      })
+        .then((res) => {
+          if (!res.ok) {
+            return res.json().then((err) => {
+              throw new Error(err.message || "Eroare necunoscută")
+            })
+          }
+          return res.json()
+        })
+        .then((data) => {
+          alert("Produsul a fost adăugat cu succes!")
+          closeModal()
+        })
+        .catch((err) => {
+          alert("Eroare: " + err.message)
+        })
+    })
+}

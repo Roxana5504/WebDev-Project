@@ -1,6 +1,10 @@
 {
   "products": [
-    { "name": "Caiet A5", "price": 5.0, "image": "/backend/images/caiet.jpg" },
+    {
+      "name": "Caiet A5",
+      "price": 5,
+      "image": "/backend/images/caiet.jpg"
+    },
     {
       "name": "Pix Albastru",
       "price": 2.5,
@@ -9,64 +13,81 @@
     },
     {
       "name": "Creioane Colorate",
-      "price": 15.0,
+      "price": 15,
       "image": "/backend/images/creioane.jpg",
       "quantity": 20
     },
     {
       "name": "Ghiozdan Ergonomic",
-      "price": 120.0,
+      "price": 120,
       "image": "/backend/images/ghiozdan.jpg",
       "quantity": 20
     },
     {
       "name": "Penar cu Fermuar",
-      "price": 30.0,
+      "price": 30,
       "image": "/backend/images/penar.jpg",
       "quantity": 20
     },
     {
       "name": "Ascuțitoare",
-      "price": 3.0,
+      "price": 3,
       "image": "/backend/images/ascutitoare.jpg",
       "quantity": 20
     },
-
     {
       "name": "Radieră",
-      "price": 2.0,
+      "price": 2,
       "image": "/backend/images/radiera.jpg",
       "quantity": 20
     },
     {
       "name": "Riglă 30cm",
-      "price": 7.0,
+      "price": 7,
       "image": "/backend/images/rigla.jpg",
       "quantity": 20
     },
     {
       "name": "Bloc de desen",
-      "price": 18.0,
+      "price": 18,
       "image": "/backend/images/blocdesen.jpg",
       "quantity": 20
     },
     {
       "name": "Set Pensule",
-      "price": 25.0,
+      "price": 25,
       "image": "/backend/images/pensule.jpg",
       "quantity": 20
     },
     {
       "name": "Set Markere",
-      "price": 40.0,
+      "price": 40,
       "image": "/backend/images/markere.jpg",
       "quantity": 20
     },
     {
       "name": "Ghiozdan Clasic",
-      "price": 90.0,
+      "price": 90,
       "image": "/backend/images/gh.jpg",
       "quantity": 20
+    },
+    {
+      "name": "caiet dictando",
+      "price": 5,
+      "quantity": 10,
+      "image": "/backend/images/caiet dictando.jpg"
+    },
+    {
+      "name": "stilou",
+      "price": 9,
+      "quantity": 3,
+      "image": "/backend/images/stilou.jpg"
+    },
+    {
+      "name": "mapa",
+      "price": 1,
+      "quantity": 4,
+      "image": "/backend/images/mapa.jpg"
     }
   ]
 }
