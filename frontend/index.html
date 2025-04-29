@@ -1,104 +1,104 @@
 <!DOCTYPE html>
 <html lang="ro">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Căutare Produse</title>
-    <link rel="stylesheet" href="/styles.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body>
-    <header class="container-header">
-      <div class="logo">
-        <img src="/backend/images/logoDWS.png" alt="EduStore" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Căutare Produse</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <header class="container-header">
+    <div class="logo">
+      <img src="/backend/images/logoDWS.png" alt="EduStore" />
+    </div>
+
+    <div class="search-bar">
+      <button class="sidebar-toggle" id="sidebar-toggle">
+        <i class="bx bx-menu"></i>
+      </button>
+      <input type="text" id="search-input" placeholder="Caută produse..." />
+      <button class="search-btn" id="search-btn">
+        <i class="bx bx-search"></i>
+      </button>
+    </div>
+
+    <div class="header-icons">
+      <div class="header-icon">
+        <span class="cart-items" id="cart-count">0</span>
+        <i class="bx bx-cart" id="cart-btn"></i>
       </div>
-
-      <div class="search-bar">
-        <button class="sidebar-toggle" id="sidebar-toggle">
-          <i class="bx bx-menu"></i>
-        </button>
-        <input type="text" id="search-input" placeholder="Caută produse..." />
-        <button class="search-btn" id="search-btn">
-          <i class="bx bx-search"></i>
-        </button>
+      <div class="header-icon">
+        <span class="fav-count" id="fav-count">0</span>
+        <i class="bx bx-heart" id="fav-btn"></i>
       </div>
-
-      <div class="header-icons">
-        <div class="header-icon">
-          <span class="cart-items">4</span>
-          <i class="bx bx-cart"></i>
-        </div>
-        <div class="header-icon">
-          <i class="bx bx-heart"></i>
-        </div>
-        <div class="header-icon profile">
-          <i class="bx bx-user"></i>
-        </div>
-      </div>
-    </header>
-
-    <div class="main-content">
-      <aside class="sidebar">
-        <div>
-          <h2>Categorii</h2>
-          <ul>
-            <li>Rechizite</li>
-            <li>Ghiozdane</li>
-            <li>Instrumente de scris</li>
-            <li>Arta & Creativitate</li>
-            <li>Accesorii</li>
-            <li>Cărți</li>
-          </ul>
-        </div>
-      </aside>
-
-      <div class="container">
-        <section class="banner">
-          <div class="banner-left">
-            <div class="banner-left-content">
-              <div class="img-cont">
-                <img src="/backend/images/gh.jpg" alt="Oferta specială" />
-              </div>
-
-              <div class="banner-text">
-                <h2>Prețuri speciale!</h2>
-                <p>Descoperă reducerile pentru rechizite</p>
-                <button class="buy-now-btn" id="buy-now-btn">
-                  Cumpără acum
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="banner-right">
-            <div class="banner-right-up">
-              <h3>🎨 Timpul pentru creativitate</h3>
-              <p>Blocuri de desen și culori la prețuri speciale</p>
-            </div>
-            <div class="banner-right-down">
-              <h3>📚 Echipat pentru școală</h3>
-              <p>Ghiozdane și accesorii noi pentru fiecare elev</p>
-            </div>
-          </div>
-        </section>
-
-        <section class="products">
-          <div class="products-explore-line">
-            <h2>Explorează produse noastre</h2>
-            <button class="all-products-button">Vezi toate -></button>
-          </div>
-          <div id="product-list" class="product-list"></div>
-        </section>
+      <div class="header-icon profile">
+        <i class="bx bx-user"></i>
       </div>
     </div>
-    <footer>
-      <p>&copy; 2025 EduStore. Toate drepturile rezervate.</p>
-      <p>Contact: suport@edustore.com</p>
-    </footer>
-    <script src="script.js"></script>
-  </body>
+  </header>
+
+  <div class="main-content">
+    <aside class="sidebar">
+      <div>
+        <h2>Categorii</h2>
+        <ul>
+          <li>Rechizite</li>
+          <li>Ghiozdane</li>
+          <li>Instrumente de scris</li>
+          <li>Arta & Creativitate</li>
+          <li>Accesorii</li>
+          <li>Cărți</li>
+        </ul>
+      </div>
+    </aside>
+
+    <div class="container">
+      <section class="banner">
+        <div class="banner-left">
+          <div class="banner-left-content">
+            <div class="img-cont">
+              <img src="/backend/images/gh.jpg" alt="Oferta specială" />
+            </div>
+
+            <div class="banner-text">
+              <h2>Prețuri speciale!</h2>
+              <p>Descoperă reducerile pentru rechizite</p>
+              <button class="buy-now-btn" id="buy-now-btn">
+                Cumpără acum
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="banner-right">
+          <div class="banner-right-up">
+            <h3>🎨 Timpul pentru creativitate</h3>
+            <p>Blocuri de desen și culori la prețuri speciale</p>
+          </div>
+          <div class="banner-right-down">
+            <h3>📚 Echipat pentru școală</h3>
+            <p>Ghiozdane și accesorii noi pentru fiecare elev</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="products">
+        <div class="products-explore-line">
+          <h2>Explorează produse noastre</h2>
+          <button class="all-products-button">Vezi toate -></button>
+        </div>
+        <div id="product-list" class="product-list"></div>
+      </section>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2025 EduStore. Toate drepturile rezervate.</p>
+    <p>Contact: suport@edustore.com</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
 </html>

@@ -459,6 +459,8 @@ footer {
 
 /*Sfarsit CSS Roxana*/
 
+
+/*Elena*/
 .product-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -521,4 +523,14 @@ footer {
   .product-list {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   }
+}
+
+
+/*pt colorarea butonului de favorite al produselor*/
+.fav-icon {
+  cursor: pointer;
+}
+
+.fav-icon.favorite {
+  color: red;
 }
