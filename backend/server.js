@@ -49,7 +49,6 @@ app.listen(PORT, () =>
 console.log("Server restarted!")
 
 
-
 // ADAUGA PRODUS-Elena
 app.post("/products", (req, res) => {
   const newProduct = req.body
