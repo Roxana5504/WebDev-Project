@@ -88,6 +88,12 @@
       "price": 1,
       "quantity": 4,
       "image": "/backend/images/mapa.jpg"
+    },
+    {
+      "name": "caiet a4",
+      "price": 8,
+      "quantity": 5,
+      "image": "/backend/images/default.jpg"
     }
   ]
 }

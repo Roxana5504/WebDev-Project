@@ -209,7 +209,7 @@ function openAddProductForm(query) {
           <input type="number" name="quantity" required />
 
           <label>URL imagine:</label>
-          <input type="text" name="image" required />
+          <input type="text" name="image" />
 
           <button type="submit">Salvează produs</button>
         </form>
@@ -225,12 +225,16 @@ function openAddProductForm(query) {
       e.preventDefault()
 
       const formData = new FormData(this)
-      const product = {
-        name: formData.get("name"),
-        price: parseFloat(formData.get("price")),
-        quantity: parseInt(formData.get("quantity")),
-        image: formData.get("image")
-      }
+      
+     const imageUrl = formData.get("image") || "/backend/images/default.jpg"
+
+const product = {
+  name: formData.get("name"),
+  price: parseFloat(formData.get("price")),
+  quantity: parseInt(formData.get("quantity")),
+  image: imageUrl
+}
+
 
       fetch("/products", {
         method: "POST",
