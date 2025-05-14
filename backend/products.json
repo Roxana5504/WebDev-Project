@@ -94,6 +94,12 @@
       "price": 10,
       "quantity": 5,
       "image": "/backend/images/mapa.jpg"
+    },
+    {
+      "name": "buna",
+      "price": 0.04,
+      "quantity": 5,
+      "image": "/backend/images/default.jpg"
     }
   ]
 }

@@ -225,16 +225,14 @@ function openAddProductForm(query) {
       e.preventDefault()
 
       const formData = new FormData(this)
-      
-     const imageUrl = formData.get("image") || "/backend/images/default.jpg"
+      const imageUrl = formData.get("image") || "/backend/images/default.jpg"
 
-const product = {
-  name: formData.get("name"),
-  price: parseFloat(formData.get("price")),
-  quantity: parseInt(formData.get("quantity")),
-  image: imageUrl
-}
-
+      const product = {
+        name: formData.get("name"),
+        price: parseFloat(formData.get("price")),
+        quantity: parseInt(formData.get("quantity")),
+        image: imageUrl
+      }
 
       fetch("/products", {
         method: "POST",
@@ -253,6 +251,7 @@ const product = {
         })
         .then((data) => {
           alert("Produsul a fost adăugat cu succes!")
+          addProductToPage(product)  
           closeModal()
         })
         .catch((err) => {
@@ -261,4 +260,19 @@ const product = {
     })
 }
 
+function addProductToPage(product) {
+  const container = document.getElementById("product-list")
+  if (!container) return  
 
+  const productCard = document.createElement("div")
+  productCard.classList.add("product-card")
+
+  productCard.innerHTML = `
+    <img src="${product.image}" alt="${product.name}" />
+    <h3>${product.name}</h3>
+    <p>Preț: ${product.price.toFixed(2)} RON</p>
+    <p>Cantitate: ${product.quantity}</p>
+  `
+
+  container.appendChild(productCard)
+}
