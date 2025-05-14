@@ -94,6 +94,12 @@
       "price": 10,
       "quantity": 5,
       "image": "/backend/images/mapa.jpg"
+    },
+    {
+      "name": "caiet verde",
+      "price": 10,
+      "quantity": 6,
+      "image": "/backend/images/default.jpg"
     }
   ]
 }
