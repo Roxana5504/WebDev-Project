@@ -208,9 +208,6 @@ function openAddProductForm(query) {
           <label>Cantitate:</label>
           <input type="number" name="quantity" required />
 
-          <label>URL imagine:</label>
-          <input type="text" name="image" />
-
           <button type="submit">Salvează produs</button>
         </form>
       </div>
@@ -225,13 +222,12 @@ function openAddProductForm(query) {
       e.preventDefault()
 
       const formData = new FormData(this)
-      const imageUrl = formData.get("image") || "/backend/images/default.jpg"
 
       const product = {
         name: formData.get("name"),
         price: parseFloat(formData.get("price")),
         quantity: parseInt(formData.get("quantity")),
-        image: imageUrl
+        image: "/backend/images/default.jpg"  // ✅ setare automată imagine
       }
 
       fetch("/products", {
@@ -251,7 +247,7 @@ function openAddProductForm(query) {
         })
         .then((data) => {
           alert("Produsul a fost adăugat cu succes!")
-          addProductToPage(product)  
+          addProductToPage(product)
           closeModal()
         })
         .catch((err) => {
@@ -262,7 +258,7 @@ function openAddProductForm(query) {
 
 function addProductToPage(product) {
   const container = document.getElementById("product-list")
-  if (!container) return  
+  if (!container) return
 
   const productCard = document.createElement("div")
   productCard.classList.add("product-card")
