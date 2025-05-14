@@ -84,16 +84,16 @@
       "image": "/backend/images/stilou.jpg"
     },
     {
-      "name": "mapa",
-      "price": 1,
-      "quantity": 4,
-      "image": "/backend/images/mapa.jpg"
-    },
-    {
-      "name": "caiet a4",
-      "price": 8,
+      "name": "Caiet rosu",
+      "price": 10,
       "quantity": 5,
       "image": "/backend/images/default.jpg"
+    },
+    {
+      "name": "mapa",
+      "price": 10,
+      "quantity": 5,
+      "image": "/backend/images/mapa.jpg"
     }
   ]
 }
